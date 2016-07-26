@@ -23,15 +23,18 @@ public class SplashScreen extends AbstractScreen{
 	
 	@Override
 	protected void init() {
-		splashImg = new Texture("ball.png");	
+		splashImg = new Texture("Ball.png");
 	}
 
 	@Override
 	public void render(float delta) {
+		final int TextureDrawX = ((IdleClicker.WIDTH / 2) - (splashImg.getWidth() / 2));
+		final int TextureDrawY = ((IdleClicker.HEIGHT / 2) + (splashImg.getHeight() / 2));
+		
 		super.render(delta);
 		
 		spriteBatch.begin();
-		spriteBatch.draw(splashImg, 0, 0);
+		spriteBatch.draw(splashImg, TextureDrawX , TextureDrawY);
 		spriteBatch.end();
 	}
 
