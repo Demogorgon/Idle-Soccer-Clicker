@@ -1,6 +1,8 @@
 package com.mygdx.game.entities;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.Action;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class Player extends Image{
@@ -19,6 +21,13 @@ public class Player extends Image{
 
 		// starting position
 		this.setPosition(ButtonPosX, ButtonPosY);
+	}
+
+	public void reactOnClick() {
+		Action RotateAction = Actions.rotateBy(20);
+		
+		this.addAction(RotateAction);
+		
 	}
 
 }
