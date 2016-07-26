@@ -11,7 +11,6 @@ public class SplashScreen extends AbstractScreen{
 
 	public SplashScreen(final IdleClicker game) {
 		super(game);
-		init();
 		
 		Timer.schedule(new Task() {
 			
@@ -21,10 +20,10 @@ public class SplashScreen extends AbstractScreen{
 			}
 		}, 2);
 	}
-
-	private void init() {
-		splashImg = new Texture("ball.png");
-		
+	
+	@Override
+	protected void init() {
+		splashImg = new Texture("ball.png");	
 	}
 
 	@Override
@@ -35,5 +34,7 @@ public class SplashScreen extends AbstractScreen{
 		spriteBatch.draw(splashImg, 0, 0);
 		spriteBatch.end();
 	}
+
+
 
 }

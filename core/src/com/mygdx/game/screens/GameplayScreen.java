@@ -9,14 +9,13 @@ public class GameplayScreen extends AbstractScreen {
 
 	public GameplayScreen(IdleClicker game) {
 		super(game);
-		init();
 	}
 
-	private void init() {
+	@Override
+	protected void init() {
 		InitGenerateCashButton();
-		
 	}
-
+	
 	private void InitGenerateCashButton() {
 		player = new Player();
 		stage.addActor(player);
@@ -36,5 +35,7 @@ public class GameplayScreen extends AbstractScreen {
 		stage.act();
 		
 	}
+
+
 
 }
