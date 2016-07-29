@@ -1,8 +1,14 @@
 package com.mygdx.game.screens;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.IdleClicker;
 import com.mygdx.game.entities.Player;
@@ -10,7 +16,12 @@ import com.mygdx.game.entities.Player;
 public class GameplayScreen extends AbstractScreen {
 	
 	private Player player;
-	private Button generateCashButton;
+	private TextButton generateCashButton;
+	private TextButtonStyle textButtonStyle;
+	private BitmapFont font;
+	private Skin skin;
+	private TextureAtlas buttonAtlas;
+
 
 	public GameplayScreen(IdleClicker game) {
 		super(game);
@@ -28,7 +39,15 @@ public class GameplayScreen extends AbstractScreen {
 	}
 
 	private void InitGenerateCashButton() {
-		generateCashButton = new Button(new ButtonStyle());
+        font = new BitmapFont();
+        skin = new Skin();
+        buttonAtlas = new TextureAtlas(Gdx.files.internal("ui/test.pack"));
+        skin.addRegions(buttonAtlas);
+        textButtonStyle = new TextButtonStyle();
+        textButtonStyle.font = font;
+        textButtonStyle.up = skin.getDrawable("test");
+
+        generateCashButton = new TextButton("Button1", textButtonStyle);
 		generateCashButton.setWidth(460);
 		generateCashButton.setHeight(360);
 		generateCashButton.setX(50);
