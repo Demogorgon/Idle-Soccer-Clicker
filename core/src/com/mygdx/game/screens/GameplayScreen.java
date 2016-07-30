@@ -47,12 +47,11 @@ public class GameplayScreen extends AbstractScreen {
         textButtonStyle.font = font;
         textButtonStyle.up = skin.getDrawable("test");
 
-        generateCashButton = new TextButton("Button1", textButtonStyle);
-		generateCashButton.setWidth(460);
-		generateCashButton.setHeight(360);
-		generateCashButton.setX(50);
-		generateCashButton.setY(170);
-		generateCashButton.setDebug(true);
+        generateCashButton = new TextButton("$$$", textButtonStyle);
+		generateCashButton.setWidth(450);
+		generateCashButton.setHeight(100);
+		generateCashButton.setX(15);
+		generateCashButton.setY(20);
 		
 		stage.addActor(generateCashButton);
 		
